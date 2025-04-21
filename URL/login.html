@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="pageTitle">DIAA.URL - تسجيل الدخول</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <i class="fas fa-link"></i>
+                <span data-translate="appName">DIAA.URL</span>
+            </div>
+            
+            <h1 class="login-title" data-translate="welcome">مرحباً بك </h1>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="login" data-translate="loginTab">تسجيل الدخول</div>
+                <div class="tab" data-tab="register" data-translate="registerTab">إنشاء حساب</div>
+            </div>
+            
+            <!-- قسم تسجيل الدخول -->
+            <div class="tab-content active" id="login-content">
+                <div class="form-group">
+                    <label data-translate="usernameLabel">اسم المستخدم أو البريد الإلكتروني</label>
+                    <input type="text" id="login-username" data-translate-placeholder="usernamePlaceholder">
+                </div>
+                
+                <div class="form-group">
+                    <label data-translate="passwordLabel">كلمة المرور</label>
+                    <input type="password" id="login-password" data-translate-placeholder="passwordPlaceholder">
+                    <a href="#" class="forgot-password" data-translate="forgotPassword">نسيت كلمة المرور؟</a>
+                </div>
+                
+                <button class="btn btn-primary" id="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> <span data-translate="loginButton">تسجيل الدخول</span>
+                </button>
+                
+                <div class="divider">
+                    <span class="divider-text" data-translate="or">أو</span>
+                </div>
+                
+                <button class="btn btn-google" id="google-login">
+                    <i class="fab fa-google"></i> <span data-translate="googleLogin">تسجيل الدخول عبر جوجل</span>
+                </button>
+            </div>
+            
+            <!-- قسم إنشاء حساب -->
+            <div class="tab-content" id="register-content">
+                <div class="form-group">
+                    <label data-translate="usernameLabel">اسم المستخدم</label>
+                    <input type="text" id="register-username" data-translate-placeholder="chooseUsername">
+                </div>
+                
+                <div class="form-group">
+                    <label data-translate="emailLabel">البريد الإلكتروني</label>
+                    <input type="email" id="register-email" data-translate-placeholder="emailPlaceholder">
+                </div>
+                
+                <div class="form-group">
+                    <label data-translate="passwordLabel">كلمة المرور</label>
+                    <input type="password" id="register-password" data-translate-placeholder="choosePassword">
+                </div>
+                
+                <div class="form-group">
+                    <label data-translate="confirmPassword">تأكيد كلمة المرور</label>
+                    <input type="password" id="register-confirm-password" data-translate-placeholder="repeatPassword">
+                </div>
+                
+                <button class="btn btn-primary" id="register-btn">
+                    <i class="fas fa-user-plus"></i> <span data-translate="registerButton">إنشاء حساب</span>
+                </button>
+                
+                <div class="divider">
+                    <span class="divider-text" data-translate="or">أو</span>
+                </div>
+                
+                <button class="btn btn-google" id="google-register">
+                    <i class="fab fa-google"></i> <span data-translate="googleRegister">التسجيل عبر جوجل</span>
+                </button>
+            </div>
+            
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="changeLanguage('ar')">
+                    <img src="https://flagcdn.com/w20/sa.png" alt="العربية">
+                    <span>العربية</span>
+                </button>
+                <button class="lang-btn" onclick="changeLanguage('en')">
+                    <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                    <span>English</span>
+                </button>
+                <button class="lang-btn" onclick="changeLanguage('tr')">
+                    <img src="https://flagcdn.com/w20/tr.png" alt="Türkçe">
+                    <span>Türkçe</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // بيانات الترجمة
+        const translations = {
+            ar: {
+                pageTitle: "DIAA.URL - تسجيل الدخول",
+                appName: "DIAA.URL",
+                welcome: "مرحباً بك  ",
+                loginTab: "تسجيل الدخول",
+                registerTab: "إنشاء حساب",
+                usernameLabel: "اسم المستخدم أو البريد الإلكتروني",
+                usernamePlaceholder: "أدخل اسم المستخدم أو البريد الإلكتروني",
+                passwordLabel: "كلمة المرور",
+                passwordPlaceholder: "أدخل كلمة المرور",
+                forgotPassword: "نسيت كلمة المرور؟",
+                loginButton: "تسجيل الدخول",
+                or: "أو",
+                googleLogin: "تسجيل الدخول عبر جوجل",
+                chooseUsername: "اختر اسم مستخدم",
+                emailLabel: "البريد الإلكتروني",
+                emailPlaceholder: "أدخل بريدك الإلكتروني",
+                choosePassword: "اختر كلمة مرور قوية",
+                confirmPassword: "تأكيد كلمة المرور",
+                repeatPassword: "أعد إدخال كلمة المرور",
+                registerButton: "إنشاء حساب",
+                googleRegister: "التسجيل عبر جوجل"
+            },
+            en: {
+                pageTitle: "DIAA.URL - Login",
+                appName: "DIAA.URL",
+                welcome: "Welcome to ",
+                loginTab: "Login",
+                registerTab: "Register",
+                usernameLabel: "Username or Email",
+                usernamePlaceholder: "Enter your username or email",
+                passwordLabel: "Password",
+                passwordPlaceholder: "Enter your password",
+                forgotPassword: "Forgot password?",
+                loginButton: "Login",
+                or: "OR",
+                googleLogin: "Login with Google",
+                chooseUsername: "Choose a username",
+                emailLabel: "Email",
+                emailPlaceholder: "Enter your email",
+                choosePassword: "Choose a strong password",
+                confirmPassword: "Confirm Password",
+                repeatPassword: "Repeat your password",
+                registerButton: "Register",
+                googleRegister: "Register with Google"
+            },
+            tr: {
+                pageTitle: "DIAA.URL - Giriş",
+                appName: "DIAA.URL",
+                welcome: " Hoş Geldiniz",
+                loginTab: "Giriş Yap",
+                registerTab: "Kayıt Ol",
+                usernameLabel: "Kullanıcı Adı veya E-posta",
+                usernamePlaceholder: "Kullanıcı adı veya e-posta girin",
+                passwordLabel: "Şifre",
+                passwordPlaceholder: "Şifrenizi girin",
+                forgotPassword: "Şifremi Unuttum?",
+                loginButton: "Giriş Yap",
+                or: "VEYA",
+                googleLogin: "Google ile Giriş Yap",
+                chooseUsername: "Kullanıcı adı seçin",
+                emailLabel: "E-posta",
+                emailPlaceholder: "E-postanızı girin",
+                choosePassword: "Güçlü bir şifre seçin",
+                confirmPassword: "Şifreyi Onayla",
+                repeatPassword: "Şifrenizi tekrar girin",
+                registerButton: "Kayıt Ol",
+                googleRegister: "Google ile Kayıt Ol"
+            }
+        };
+
+        // تغيير اللغة
+        function changeLanguage(lang) {
+            // تغيير سمة اللغة واتجاه الصفحة
+            //document.documentElement.lang = lang;
+            //document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // تحديث عنوان الصفحة
+            document.title = translations[lang].pageTitle;
+            
+            // إزالة النشط من جميع أزرار اللغة
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // إضافة النشط للزر المحدد
+            event.target.classList.add('active');
+            
+            // تحديث جميع النصوص المترجمة
+            updateTranslations(lang);
+            
+            // تحديث العناصر النائبة
+            updatePlaceholders(lang);
+        }
+
+        // تحديث النصوص المترجمة
+        function updateTranslations(lang) {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // تحديث العناصر النائبة
+        function updatePlaceholders(lang) {
+            document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-translate-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        // نظام التبويبات
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // إزالة النشط من جميع الأزرار
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // إضافة النشط للزر المحدد
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+
+        // تسجيل الدخول
+        document.getElementById('login-btn').addEventListener('click', function() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            
+            if (!username || !password) {
+                alert(getTranslation('fillAllFields'));
+                return;
+            }
+            
+            // هنا يمكنك إضافة التحقق من صحة البيانات
+            window.location.href = 'index.html';
+        });
+
+        // إنشاء حساب
+        document.getElementById('register-btn').addEventListener('click', function() {
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            if (!username || !email || !password || !confirmPassword) {
+                alert(getTranslation('fillAllFields'));
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert(getTranslation('passwordMismatch'));
+                return;
+            }
+            
+            window.location.href = 'index.html';
+        });
+
+        // تسجيل الدخول عبر جوجل
+        document.getElementById('google-login').addEventListener('click', function() {
+            alert(getTranslation('googleRedirect'));
+        });
+
+        document.getElementById('google-register').addEventListener('click', function() {
+            alert(getTranslation('googleRedirect'));
+        });
+
+        // الحصول على ترجمة للنصوص الديناميكية
+        function getTranslation(key) {
+            const lang = document.documentElement.lang || 'ar';
+            return translations[lang][key] || key;
+        }
+
+        // تهيئة اللغة عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحديد اللغة الافتراضية
+            const defaultLang = 'en';
+            changeLanguage(defaultLang);
+        });
+    </script>
+</body>
+</html> 
+
