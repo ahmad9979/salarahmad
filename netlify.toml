@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  SUPABASE_URL = "https://heotpvmqyhrshamusjig.supabase.co"
+  SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhlb3Rwdm1xeWhyc2hhbXVzamlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU1NjUwNDksImV4cCI6MjA2MTE0MTA0OX0.AlJ11kFmXOLlKnX3TtF6koE_eY5hnkkIset4e9YUKyE"
