@@ -42,12 +42,29 @@ body {
     border-bottom: 1px solid rgba(37, 211, 102, 0.2);
 }
 
+
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+}
+/* أنماط رفع الصورة */
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#image-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
 }
 
 .logo {
@@ -428,4 +445,53 @@ input:focus {
 /* تأكد من أن الرابط لا يغطيه زر النسخ */
 .link {
     padding-right: 50px !important;
+}
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#image-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+}
+.logo img {
+    height: 40px; /* تحكم في الارتفاع */
+    width: auto; /* يحافظ على التناسب */
+    filter: 
+        brightness(0.9) /* تحسين الإضاءة */
+        drop-shadow(0 0 5px rgba(37, 211, 102, 0.7)); /* إضاءة خضراء */
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    filter: 
+        brightness(1.1) 
+        drop-shadow(0 0 10px rgba(37, 211, 102, 1));
+}
+/* للتكامل مع الألوان */
+.logo-text {
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    margin-right: 10px;
+    text-shadow: 0 0 5px var(--primary);
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .logo img {
+        height: 30px;
+    }
+    .logo-text {
+        font-size: 0.9rem;
+    }
 }

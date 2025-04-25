@@ -177,8 +177,8 @@
         // تغيير اللغة
         function changeLanguage(lang) {
             // تغيير سمة اللغة واتجاه الصفحة
-            //document.documentElement.lang = lang;
-            //document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
             // تحديث عنوان الصفحة
             document.title = translations[lang].pageTitle;
@@ -290,4 +290,4 @@
     </script>
 </body>
 </html> 
-
+ 
